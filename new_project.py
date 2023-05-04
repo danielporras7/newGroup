@@ -162,6 +162,8 @@ class Target(GameObject):
         self.coord = coord
         self.rad = rad
 
+       
+
         if color == None:
             color = rand_color()
         self.color = color
@@ -170,9 +172,10 @@ class Target(GameObject):
         '''
         Checks whether the ball bumps into target.
         '''
+        
         dist = sum([(self.coord[i] - ball.coord[i])**2 for i in range(2)])**0.5
         min_dist = self.rad + ball.rad
-        return dist <= min_dist
+        return dist <= min_dist 
 
     def draw(self, screen):
        # Draws the target on the screen  
